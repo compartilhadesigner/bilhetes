@@ -96,7 +96,7 @@ class B2XWebsite:
             self.pinId = code
 
     def get_bet_data(self):        
-        self.save_screenshot()
+        # self.save_screenshot()
         self.set_bet_value(self.betAmount)
         self.get_link()
 

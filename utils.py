@@ -82,49 +82,49 @@ def capturar_screenshot_elemento_cortado(driver, seletor, tipo_seletor=By.CSS_SE
         return None
     
 WEBSITES = [
-  {
-    "name": "JOGABET",
-    "link": "https://jogabets.com.br/sistema_v2/usuarios/simulador/desktop/jogos.aspx?idesporte=102&idcampeonato=574908",
-    "isSA": True,
-  },
-  {
-    "name": "BBS",
-    "link": "https://bbsesportes.com.br/sistema_v2/usuarios/simulador/desktop/jogos.aspx?idesporte=102&idcampeonato=574908",
-    "isSA": True,
-  },
-  {
-    "name": "NACIONAL",
-    "link": "https://nacionalbet.app/sistema_v2/usuarios/simulador/desktop/Jogos.aspx?idesporte=102&idcampeonato=574908",
-    "isSA": True,
-  },
-  {
-    "name": "DS 365",
-    "link": "https://dsesportes365.com/sistema_v2/usuarios/simulador/desktop/jogos.aspx?idesporte=102&idcampeonato=574908",
-    "isSA": True,
-  },
-  {
-    "name": "DS ESPORTES",
-    "link": "https://dsesportes.bet/sistema_v2/usuarios/simulador/desktop/jogos.aspx?idesporte=102&idcampeonato=574908",
-    "isSA": True,
-  },
+  # {
+  #   "name": "JOGABET",
+  #   "link": "https://jogabets.com.br/sistema_v2/usuarios/simulador/desktop/jogos.aspx?idesporte=102&idcampeonato=574908",
+  #   "isSA": True,
+  # },
+  # {
+  #   "name": "BBS",
+  #   "link": "https://bbsesportes.com.br/sistema_v2/usuarios/simulador/desktop/jogos.aspx?idesporte=102&idcampeonato=574908",
+  #   "isSA": True,
+  # },
+  # {
+  #   "name": "NACIONAL",
+  #   "link": "https://nacionalbet.app/sistema_v2/usuarios/simulador/desktop/Jogos.aspx?idesporte=102&idcampeonato=574908",
+  #   "isSA": True,
+  # },
+  # {
+  #   "name": "DS 365",
+  #   "link": "https://dsesportes365.com/sistema_v2/usuarios/simulador/desktop/jogos.aspx?idesporte=102&idcampeonato=574908",
+  #   "isSA": True,
+  # },
+  # {
+  #   "name": "DS ESPORTES",
+  #   "link": "https://dsesportes.bet/sistema_v2/usuarios/simulador/desktop/jogos.aspx?idesporte=102&idcampeonato=574908",
+  #   "isSA": True,
+  # },
   {
     "name": "B2X",
     "link": "https://b2x.bet.br/sports?tab=Early"
   },
-  {
-    "name": "365BR",
-    "link": "https://b365br.com/#/"
-  },
-  {
-    "name": "CENTRAL BET",
-    "link": "https://centralbet.site/v3/"
-  },
-  {
-    "name": "SYMBET",
-    "link": "https://symbet.vip/"
-  },
-  {
-    "name": "SPORTBET365",
-    "link": "https://sportbet365.site/v3/"
-  }
+  # {
+  #   "name": "365BR",
+  #   "link": "https://b365br.com/#/"
+  # },
+  # {
+  #   "name": "CENTRAL BET",
+  #   "link": "https://centralbet.site/v3/"
+  # },
+  # {
+  #   "name": "SYMBET",
+  #   "link": "https://symbet.vip/"
+  # },
+  # {
+  #   "name": "SPORTBET365",
+  #   "link": "https://sportbet365.site/v3/"
+  # }
 ]
