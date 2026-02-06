@@ -2,7 +2,7 @@ function readDataFile(fileName) {
     var scriptFile = new File($.fileName);
     var scriptFolder = scriptFile.parent;
 
-    var dataFile = new File(scriptFolder + "/" + fileName);
+    var dataFile = new File(scriptFolder.parent + "/" + fileName);
 
     if (!dataFile.exists) {
         throw new Error("Arquivo " + fileName + " não encontrado.");
