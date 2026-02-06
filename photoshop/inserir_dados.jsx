@@ -20,7 +20,7 @@ if (!screenshotsFolder.exists) {
 
 var data = readDataFile("dados.txt");
 
-for (var i = 0; i < 1; i++) {
+for (var i = 0; i < data.length; i++) {
     var item = data[i];
 
     // 1. pasta do customer

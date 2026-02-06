@@ -49,7 +49,7 @@ function save_images() {
         customerGroup.visible = false;
     }
 
-    alert("Exportação PNG-24 (Save for Web) concluída.");
+    alert("As imagens foram salvas com sucesso!");
 }
 
 save_images()

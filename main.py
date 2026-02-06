@@ -8,7 +8,9 @@ from models.SymBet import SymBet
 from models.SportBet365 import SportBet365
 from models.BR365 import BR365Bet
 from selenium.webdriver.support.ui import WebDriverWait
-import time
+
+with open("dados.txt", "w", encoding="utf-8") as f:
+    pass
 
 def get_bet_data(webdriver):
     if not webdriver:
@@ -53,3 +55,5 @@ for website in WEBSITES:
         b365.get_bet_data()
 
     driver.close()
+
+Logger.success(f"FINALIZADO COM SUCESSO!")

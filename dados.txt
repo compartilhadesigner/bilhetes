@@ -1,5 +1,11 @@
-code: 19925
-customer: CENTRAL BET
+code: 519835
+customer: JOGABET
 betAmount: 20
-profit: 652.44
-print: B2X.png
+profit: 248.6
+print: JOGABET.png
+-------------
+code: 417130
+customer: BBS
+betAmount: 20
+profit: 316.4
+print: BBS.png
