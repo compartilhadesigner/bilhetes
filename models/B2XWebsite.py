@@ -11,12 +11,13 @@ from urllib.parse import urlparse, parse_qs
 from models.DataManager import DataManager
 
 class B2XWebsite:
-    def __init__(self, webdriver, websiteName: str):
+    def __init__(self, webdriver, websiteName: str, bil_num = 1):
         self.webdriver = webdriver
         self.websiteName = websiteName
         self.betAmount = 20
         self.pinId = None
         self.profit = None
+        self.bil_num = bil_num
         
     def __parse_link(self, url: str) -> str:
         query = parse_qs(urlparse(url).query)
@@ -106,5 +107,5 @@ class B2XWebsite:
             "customer": self.websiteName,
             "betAmount": self.betAmount,
             "profit": self.profit,
-            "print": f"{self.websiteName}.png"
+            "print": f"{self.websiteName}{self.bil_num}.png"
         })

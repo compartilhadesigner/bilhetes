@@ -1,0 +1,24 @@
+{
+    "JOGABET": [
+        {
+            "code": "871556",
+            "betAmount": 20,
+            "profit": 400.4,
+            "print": "JOGABET_1.png"
+        },
+        {
+            "code": "871558",
+            "betAmount": 20,
+            "profit": 400.4,
+            "print": "JOGABET_2.png"
+        }
+    ],
+    "PENTABET": [
+        {
+            "code": "222",
+            "betAmount": 20,
+            "profit": 400.4,
+            "print": "pentab.png"
+        }
+    ]
+}

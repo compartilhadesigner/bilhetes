@@ -4,12 +4,13 @@ from models.DataManager import DataManager
 from selenium.webdriver.common.keys import Keys
 
 class BR365Bet:
-    def __init__(self, webdriver, websiteName: str):
+    def __init__(self, webdriver, websiteName: str, bil_num = 1):
         self.webdriver = webdriver
         self.websiteName = websiteName
         self.betAmount = 20
         self.pinId = None
         self.profit = None
+        self.bil_num = bil_num
     
     def __parse_money(self, s: str) -> float:
         num = re.search(r"[\d.,]+", s).group()
@@ -85,5 +86,5 @@ class BR365Bet:
             "customer": self.websiteName,
             "betAmount": self.betAmount,
             "profit": self.profit,
-            "print": f"{self.websiteName}.png"
+            "print": f"{self.websiteName}{self.bil_num}.png"
         })

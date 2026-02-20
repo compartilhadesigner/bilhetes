@@ -3,10 +3,11 @@ from selenium.webdriver.common.by import By
 from models.DataManager import DataManager
 
 class SAWebsite:
-    def __init__(self, webdriver, websiteName: str):
+    def __init__(self, webdriver, websiteName: str, bil_num = 1):
         self.webdriver = webdriver
         self.websiteName = websiteName
         self.betAmount = 20
+        self.bil_num = bil_num
 
     def get_bet_data(self):
         driver = self.webdriver
@@ -53,5 +54,5 @@ class SAWebsite:
             "customer": self.websiteName,
             "betAmount": self.betAmount,
             "profit": profit,
-            "print": f"{self.websiteName}.png"
+            "print": f"{self.websiteName}{self.bil_num}.png"
         })

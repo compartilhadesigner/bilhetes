@@ -5,12 +5,13 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
 
 class SportBet365:
-    def __init__(self, webdriver, websiteName: str):
+    def __init__(self, webdriver, websiteName: str, bil_num = 1):
         self.webdriver = webdriver
         self.websiteName = websiteName
         self.betAmount = 20
         self.pinId = None
         self.profit = None
+        self.bil_num = bil_num
     
     def __parse_money(self, s: str) -> float:
         num = re.search(r"[\d.,]+", s).group()
@@ -70,5 +71,5 @@ class SportBet365:
             "customer": self.websiteName,
             "betAmount": self.betAmount,
             "profit": self.profit,
-            "print": f"{self.websiteName}.png"
+            "print": f"{self.websiteName}{self.bil_num}.png"
         })
