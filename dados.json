@@ -7,18 +7,18 @@
             "print": "JOGABET_1.png"
         },
         {
-            "code": "871558",
+            "code": "333",
             "betAmount": 20,
             "profit": 400.4,
             "print": "JOGABET_2.png"
         }
     ],
-    "PENTABET": [
+    "B2X": [
         {
             "code": "222",
             "betAmount": 20,
             "profit": 400.4,
-            "print": "pentab.png"
+            "print": "B2X1.png"
         }
     ]
 }

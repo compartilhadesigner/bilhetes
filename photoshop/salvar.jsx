@@ -2,7 +2,8 @@
 #include "utils.jsx"
 #include "prototypes.jsx"
 
-function save_images() {
+function save_image(customerName, index) {
+
     if (!app.documents.length) {
         alert("Abra o PSD antes de rodar o script.");
         return;
@@ -23,33 +24,41 @@ function save_images() {
         }
     }
 
-    hideAllGroups(doc);
-
     function saveForWebPNG(file) {
         var options = new ExportOptionsSaveForWeb();
         options.format = SaveDocumentType.PNG;
-        options.PNG8 = false;                 // PNG-24
-        options.transparency = true;          // manter transparência
+        options.PNG8 = false;      
+        options.transparency = true;
         options.interlaced = false;
-        options.includeProfile = true;        // incorporar perfil de cores
-        options.convertToSRGB = true;         // converter para sRGB
+        options.includeProfile = true;
+        options.convertToSRGB = true;
         options.optimized = true;
 
         doc.exportDocument(file, ExportType.SAVEFORWEB, options);
     }
 
+    // 🔥 1. Oculta tudo
+    hideAllGroups(doc);
+
+    // 🔥 2. Procura o grupo do customer
+    var customerGroup = null;
+
     for (var i = 0; i < doc.layerSets.length; i++) {
-        var customerGroup = doc.layerSets[i];
-
-        customerGroup.visible = true;
-
-        var file = new File(outputFolder + "/" + customerGroup.name + ".png");
-        saveForWebPNG(file);
-
-        customerGroup.visible = false;
+        if (doc.layerSets[i].name === customerName) {
+            customerGroup = doc.layerSets[i];
+            break;
+        }
     }
 
-    alert("As imagens foram salvas com sucesso!");
-}
+    if (!customerGroup) {
+        alert("Grupo do customer não encontrado: " + customerName);
+        return;
+    }
 
-save_images()
+    // 🔥 3. Ativa somente ele
+    customerGroup.visible = true;
+
+    // 🔥 4. Salva uma única imagem
+    var file = new File(outputFolder + "/" + customerName + "_" + index.toString() + ".png");
+    saveForWebPNG(file);
+}
