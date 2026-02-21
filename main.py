@@ -17,7 +17,15 @@ def get_bet_data(webdriver):
         return None
 
 for website in WEBSITES:
-    bil_count = int(input(f"Quantos bilhetes para o site {website['name']}? "))
+    while True:
+        try:
+            bil_count = int(input(f"Quantos bilhetes para o site {website['name']}? "))
+            if bil_count > 0:
+                break
+            else:
+                print("Digite um número inteiro maior que 0.")
+        except ValueError:
+            print("Digite um número inteiro válido.")
 
     driver = Webdriver('').getDriver()
 

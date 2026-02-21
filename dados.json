@@ -1,24 +1,16 @@
 {
     "JOGABET": [
         {
-            "code": "871556",
+            "code": "120451",
             "betAmount": 20,
-            "profit": 400.4,
-            "print": "JOGABET_1.png"
+            "profit": 4533.2,
+            "print": "JOGABET1.png"
         },
         {
-            "code": "333",
+            "code": "791645",
             "betAmount": 20,
-            "profit": 400.4,
-            "print": "JOGABET_2.png"
-        }
-    ],
-    "B2X": [
-        {
-            "code": "222",
-            "betAmount": 20,
-            "profit": 400.4,
-            "print": "B2X1.png"
+            "profit": 3356.4,
+            "print": "JOGABET2.png"
         }
     ]
 }
