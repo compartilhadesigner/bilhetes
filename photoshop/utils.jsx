@@ -73,6 +73,9 @@ function replaceImageInGroup(group, imageFile) {
         throw new Error("Imagem não encontrada: " + imageFile.fsName);
     }
 
+    var TARGET_W = 535;
+    var TARGET_H = 1278;
+
     var targetLayer = findFirstArtLayer(group);
     if (!targetLayer) {
         throw new Error("Nenhuma camada de imagem encontrada no grupo.");
@@ -95,6 +98,27 @@ function replaceImageInGroup(group, imageFile) {
     mainDoc.activeLayer = group;
     var newLayer = mainDoc.paste();
     newLayer.move(group, ElementPlacement.INSIDE);
+
+    // -------------------------
+    // REDIMENSIONAMENTO PROPORCIONAL
+    // -------------------------
+
+    var bounds = newLayer.bounds; // [left, top, right, bottom]
+
+    var width = bounds[2].as("px") - bounds[0].as("px");
+    var height = bounds[3].as("px") - bounds[1].as("px");
+
+    var scaleX = TARGET_W / width;
+    var scaleY = TARGET_H / height;
+
+    // Usa o maior fator para preencher o máximo possível sem deformar
+    var scale = Math.max(scaleX, scaleY) * 100;
+
+    newLayer.resize(scale, scale, AnchorPosition.MIDDLECENTER);
+
+    // -------------------------
+    // Re-centraliza
+    // -------------------------
 
     var newCenter = getLayerCenterPx(newLayer);
 

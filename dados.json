@@ -1,16 +1,10 @@
 {
     "JOGABET": [
         {
-            "code": "120451",
+            "code": "284663",
             "betAmount": 20,
-            "profit": 4533.2,
+            "profit": 924.4,
             "print": "JOGABET1.png"
-        },
-        {
-            "code": "791645",
-            "betAmount": 20,
-            "profit": 3356.4,
-            "print": "JOGABET2.png"
         }
     ]
 }
