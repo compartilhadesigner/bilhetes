@@ -103,3 +103,28 @@ function replaceImageInGroup(group, imageFile) {
 
     newLayer.translate(dx, dy);
 }
+
+function formatarMoedaBR(valor) {
+    valor = Number(valor);
+
+    if (isNaN(valor)) {
+        return "R$0,00";
+    }
+
+    // Garante duas casas decimais
+    var partes = valor.toFixed(2).split(".");
+
+    var inteiro = partes[0];
+    var decimal = partes[1];
+
+    // Adiciona separador de milhar manualmente
+    var resultado = "";
+    while (inteiro.length > 3) {
+        resultado = "." + inteiro.slice(-3) + resultado;
+        inteiro = inteiro.slice(0, -3);
+    }
+
+    resultado = inteiro + resultado;
+
+    return "R$" + resultado + "," + decimal;
+}

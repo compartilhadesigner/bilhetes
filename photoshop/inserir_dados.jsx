@@ -46,16 +46,16 @@ for (var customer in data) {
             if (textoGroup) {
 
                 var retorno10 = findTextLayer(textoGroup, "RETORNO 10");
-                if (retorno10) retorno10.textItem.contents = String(fator * 10);
+                if (retorno10) retorno10.textItem.contents = formatarMoedaBR(fator * 10);
 
                 var retorno20 = findTextLayer(textoGroup, "RETORNO 20");
-                if (retorno20) retorno20.textItem.contents = String(fator * 20);
+                if (retorno20) retorno20.textItem.contents = formatarMoedaBR(fator * 20);
 
                 var retorno50 = findTextLayer(textoGroup, "RETORNO 50");
-                if (retorno50) retorno50.textItem.contents = String(fator * 50);
+                if (retorno50) retorno50.textItem.contents = formatarMoedaBR(fator * 50);
 
                 var retorno100 = findTextLayer(textoGroup, "RETORNO 100");
-                if (retorno100) retorno100.textItem.contents = String(fator * 100);
+                if (retorno100) retorno100.textItem.contents = formatarMoedaBR(fator * 100);
 
                 var pin = findTextLayer(textoGroup, "PIN");
                 if (pin) pin.textItem.contents = String(item.code);
@@ -66,10 +66,10 @@ for (var customer in data) {
             if (textoGroup) {
 
                 var retorno = findTextLayer(textoGroup, "RETORNO");
-                if (retorno) retorno.textItem.contents = String(item.profit);
+                if (retorno) retorno.textItem.contents = formatarMoedaBR(item.profit);
 
                 var valor = findTextLayer(textoGroup, "VALOR");
-                if (valor) valor.textItem.contents = String(item.betAmount);
+                if (valor) valor.textItem.contents = formatarMoedaBR(item.betAmount);
 
                 var pin = findTextLayer(textoGroup, "PIN");
                 if (pin) pin.textItem.contents = String(item.code);

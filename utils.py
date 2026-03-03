@@ -107,14 +107,14 @@ WEBSITES = [
     "link": "https://dsesportes.bet/sistema_v2/usuarios/simulador/desktop/jogos.aspx?idesporte=102&idcampeonato=574908",
     "isSA": True,
   },
-  {
-    "name": "B2X",
-    "link": "https://b2x.bet.br/sports?tab=Early"
-  },
-  {
-    "name": "365BR",
-    "link": "https://b365br.com/#/"
-  },
+  # {
+  #   "name": "B2X",
+  #   "link": "https://b2x.bet.br/sports?tab=Early"
+  # },
+  # {
+  #   "name": "365BR",
+  #   "link": "https://b365br.com/#/"
+  # },
   {
     "name": "CENTRAL BET",
     "link": "https://centralbet.site/v3/"
