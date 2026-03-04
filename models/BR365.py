@@ -2,6 +2,7 @@ import time
 import re
 from models.DataManager import DataManager
 from selenium.webdriver.common.keys import Keys
+from models.Logger import Logger
 
 class BR365Bet:
     def __init__(self, webdriver, websiteName: str, bil_num = 1):
@@ -26,6 +27,10 @@ class BR365Bet:
         return float(num)
 
     def get_bet_data(self):
+        Logger.info("Aguardando a seleção de times!")
+
+        input("\033[94mPressione ENTER quando selecionar os times e salvar o print...\033[0m")
+    
         input = self.webdriver.execute_script(
             """return document.querySelectorAll("[role='spinbutton']")[0]"""
         )

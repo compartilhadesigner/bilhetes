@@ -3,6 +3,7 @@ import re
 from models.DataManager import DataManager
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
+from models.Logger import Logger
 
 class SportBet365:
     def __init__(self, webdriver, websiteName: str, bil_num = 1):
@@ -27,12 +28,16 @@ class SportBet365:
         return float(num)
 
     def get_bet_data(self):
-        input = self.webdriver.execute_script(
+        Logger.info("Aguardando a seleção de times!")
+
+        input("\033[94mPressione ENTER quando selecionar os times...\033[0m")
+    
+        _input = self.webdriver.execute_script(
             "return document.getElementById('valorApostado')"
         )
-        input.clear()
-        input.send_keys(self.betAmount)
-        input.send_keys(Keys.TAB)
+        _input.clear()
+        _input.send_keys(self.betAmount)
+        _input.send_keys(Keys.TAB)
 
         time.sleep(4)
 
@@ -51,6 +56,10 @@ class SportBet365:
         WebDriverWait(self.webdriver, 30).until(
             lambda d: d.execute_script("return document.readyState") == "complete"
         )
+
+        Logger.info("Aguardando o print!")
+
+        input("\033[94mPressione ENTER quando salvar o print...\033[0m")
 
         raw_profit = self.webdriver.execute_script("""
             const value = [...document.querySelectorAll('span.tag-t1')]

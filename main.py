@@ -38,10 +38,6 @@ for website in WEBSITES:
             lambda d: d.execute_script("return document.readyState") == "complete"
         )
 
-        Logger.info("Aguardando a seleção de times!")
-
-        input("\033[94mPressione ENTER quando selecionar os times e salvar o print...\033[0m")
-
         if 'isSA' in website and website['isSA']:
             sa = SAWebsite(webdriver=driver, websiteName=website['name'], bil_num=bil+1)
             sa.get_bet_data()

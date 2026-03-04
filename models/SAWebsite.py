@@ -1,6 +1,7 @@
 import time
 from selenium.webdriver.common.by import By
 from models.DataManager import DataManager
+from models.Logger import Logger
 
 class SAWebsite:
     def __init__(self, webdriver, websiteName: str, bil_num = 1):
@@ -10,6 +11,10 @@ class SAWebsite:
         self.bil_num = bil_num
 
     def get_bet_data(self):
+        Logger.info("Aguardando a seleção de times!")
+
+        input("\033[94mPressione ENTER quando selecionar os times e salvar o print...\033[0m")
+    
         driver = self.webdriver
 
         betslip_items = driver.find_elements(By.CLASS_NAME, "betslip-item")

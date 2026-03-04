@@ -9,6 +9,7 @@ import pyperclip
 import re 
 from urllib.parse import urlparse, parse_qs
 from models.DataManager import DataManager
+from models.Logger import Logger
 
 class B2XWebsite:
     def __init__(self, webdriver, websiteName: str, bil_num = 1):
@@ -97,7 +98,10 @@ class B2XWebsite:
             self.pinId = code
 
     def get_bet_data(self):        
-        # self.save_screenshot()
+        Logger.info("Aguardando a seleção de times!")
+
+        input("\033[94mPressione ENTER quando selecionar os times e salvar o print...\033[0m")
+        
         self.set_bet_value(self.betAmount)
         self.get_link()
 
