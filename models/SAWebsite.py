@@ -46,6 +46,22 @@ class SAWebsite:
             buttonFinish?.click()
         """)
 
+        time.sleep(2)
+
+        has_notification = driver.execute_script("""
+            return document.getElementsByClassName("notification").length > 0;
+        """)
+
+        if has_notification:
+            driver.execute_script("""
+                document.getElementsByClassName("notification-header-close")[0]?.click();
+            """)
+            time.sleep(1)
+            driver.execute_script("""
+                const buttonFinish = document.getElementById("btnFinalizar");
+                buttonFinish?.click();
+            """)
+
         time.sleep(10)
 
         pinId = driver.execute_script("""
